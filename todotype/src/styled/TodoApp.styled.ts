@@ -1,6 +1,5 @@
 import { styled } from "@mui/material/styles";
-import { Typography } from "@mui/material";
-import { Assignment as AssignmentIcon } from "@mui/icons-material";
+import { IconButton, ListItem, ListItemText, Typography } from "@mui/material";
 
 export const StyledTitle = styled(Typography)({
   fontWeight: 700,
@@ -13,18 +12,34 @@ export const StyledSubtitle = styled(Typography)({
   margin: 0,
 });
 
-export const StyledEmptyIcon = styled(AssignmentIcon)({
-  fontSize: "3.75rem",
-});
+export const StyledListItem = styled(ListItem)(() => ({
+  border: "1px solid #ac8888ff",
+  borderRadius: "8px",
+  marginBottom: "8px",
+  padding: "12px 16px",
+  display: "flex",
+  alignItems: "center",
+  backgroundColor: "#cababaff",
+  transition: "background-color 0.2s ease",
+  "&:hover": {
+    backgroundColor: "#f5f5f5",
+  },
+}));
 
-export const StyledEmptyTitle = styled(Typography)({
-  fontWeight: 500,
-  fontSize: "1.25rem",
-  marginBottom: "0.5rem",
-});
+export const TodoText = styled(ListItemText)<{ completed?: boolean }>(
+  ({ completed }) => ({
+    textDecoration: completed ? "line-through" : "none",
+    opacity: completed ? 0.6 : 1,
+    color: completed ? "#2e7d32" : "#212121",
+    fontWeight: 500,
+  })
+);
 
-export const StyledEmptyDescription = styled(Typography)({
-  opacity: 0.8,
-  fontSize: "0.875rem",
-  margin: 0,
-});
+export const DeleteButton = styled(IconButton)(() => ({
+  color: "#d32f2f",
+  marginLeft: "auto",
+  "&:hover": {
+    backgroundColor: "#f28b82",
+    color: "#ffffff",
+  },
+}));

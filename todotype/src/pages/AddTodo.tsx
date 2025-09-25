@@ -9,8 +9,11 @@ const AddTodo = ({ onAdd }: AddTodoProps) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (text.trim()) {
+      onAdd(text.trim());
+      setText("");
+    }
   };
-
   return (
     <Paper className={styles.container} sx={{ bgcolor: "#af8b8b" }}>
       <Box

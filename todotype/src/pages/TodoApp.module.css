@@ -43,16 +43,3 @@
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
 }
-
-.chipIcon {
-  width: 1rem;
-  height: 1rem;
-}
-
-.chipIconTotal {
-  color: #3b82f6;
-}
-
-.chipIconCompleted {
-  color: #10b981;
-}
